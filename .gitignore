@@ -1,0 +1,49 @@
+# API Keys and Secrets
+.env
+config.py
+api_keys.txt
+
+# OpenAI
+*.openai
+
+# CloudTrail Logs (contain AWS credentials)
+flaws_cloudtrail*.json.gz
+*.log
+
+# CTF Walkthrough files (contain example credentials)
+flaws_ctf_beginner_guide.txt
+flaws_eda_interactive.ipynb
+
+# Generated Reports
+forensic_report.md
+llm_forensic_report.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+flaws_env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
