@@ -14,9 +14,9 @@ flaws_cloudtrail*.json.gz
 flaws_ctf_beginner_guide.txt
 flaws_eda_interactive.ipynb
 
-# Generated Reports
+# Generated Data & Reports
+forensic_analysis.json
 forensic_report.md
-llm_forensic_report.md
 
 # Python
 __pycache__/

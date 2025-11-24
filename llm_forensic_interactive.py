@@ -76,19 +76,82 @@ def generate_report():
 
     return report
 
+def load_extended_analysis():
+    """Load extended analysis if available"""
+    try:
+        with open('llm_forensic_extended.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return None
+
+extended_data = load_extended_analysis()
+
+def analyze_attack_phases():
+    """Analyze distinct attack phases"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['attack_phases'])
+
+def analyze_ip_intelligence():
+    """Analyze IP patterns"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['ip_intelligence'])
+
+def analyze_behavioral_sequences():
+    """Analyze user behavior sequences"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['behavioral_sequences'])
+
+def analyze_error_patterns():
+    """Analyze error forensics"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['error_forensics'])
+
+def analyze_correlations():
+    """Analyze user correlations"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['correlation_analysis'])
+
+def analyze_explosion_timeline():
+    """Analyze hourly explosion timeline"""
+    if not extended_data:
+        print("Run llm_forensic_extended.py first")
+        return
+    return call_llm(extended_data['prompts']['explosion_timeline'])
+
 def main():
     """Interactive CLI"""
     while True:
         print("\n" + "="*60)
         print("CloudTrail Forensic Analysis")
         print("="*60)
+        print("Basic Analysis:")
         print("1. Analyze attack narrative")
         print("2. Compare user behaviors")
         print("3. Reconstruct timeline")
         print("4. Ask custom question")
         print("5. Generate full report")
         print("6. View statistics")
-        print("7. Exit")
+
+        if extended_data:
+            print("\nExtended Analysis:")
+            print("7. Attack phases")
+            print("8. IP intelligence")
+            print("9. Behavioral sequences")
+            print("10. Error forensics")
+            print("11. User correlations")
+            print("12. Explosion timeline")
+
+        print("\n0. Exit")
 
         choice = input("\nChoice: ").strip()
 
@@ -108,7 +171,19 @@ def main():
             print("Saved to forensic_report.md")
         elif choice == '6':
             print("\n" + json.dumps(data['statistics'], indent=2))
-        elif choice == '7':
+        elif choice == '7' and extended_data:
+            print("\n" + analyze_attack_phases())
+        elif choice == '8' and extended_data:
+            print("\n" + analyze_ip_intelligence())
+        elif choice == '9' and extended_data:
+            print("\n" + analyze_behavioral_sequences())
+        elif choice == '10' and extended_data:
+            print("\n" + analyze_error_patterns())
+        elif choice == '11' and extended_data:
+            print("\n" + analyze_correlations())
+        elif choice == '12' and extended_data:
+            print("\n" + analyze_explosion_timeline())
+        elif choice == '0':
             break
         else:
             print("Invalid choice")

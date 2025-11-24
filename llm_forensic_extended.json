@@ -1,0 +1,1437 @@
+{
+  "attack_phases": [
+    {
+      "phase": "Initial_Reconnaissance",
+      "start": "2017-02-19 23:38:17+00:00",
+      "end": "2017-02-23 04:09:21+00:00",
+      "duration_hours": 76.51777777777778,
+      "events": 39,
+      "unique_actions": 15,
+      "action_sequence": [
+        "DescribeLoadBalancers",
+        "ListFunctions202224",
+        "GetPolicy202224v2",
+        "ListDistributions",
+        "GetResources",
+        "GetPolicy202224v2",
+        "ListPolicies",
+        "ListPolicies",
+        "ListPolicies",
+        "ListAccessKeys",
+        "GetUser",
+        "GetAccountSummary",
+        "GetUser",
+        "ListPolicies",
+        "ListPolicies",
+        "ListPolicies",
+        "ListPolicies",
+        "ListAttachedUserPolicies",
+        "GetStages",
+        "GetStages",
+        "GetStages",
+        "ListAttachedUserPolicies",
+        "GetUser",
+        "ListAttachedUserPolicies",
+        "GetUserPolicy",
+        "GetPolicy",
+        "GetPolicy",
+        "GetPolicyVersion",
+        "GetStages",
+        "GetRestApis",
+        "ListFunctions202224",
+        "GetPolicy202224v2",
+        "GetUser",
+        "ListAttachedUserPolicies",
+        "GetPolicy",
+        "GetPolicyVersion",
+        "ListFunctions202224",
+        "GetPolicy202224v2",
+        "GetStages"
+      ],
+      "services": [
+        "elasticloadbalancing.amazonaws.com",
+        "lambda.amazonaws.com",
+        "cloudfront.amazonaws.com",
+        "apigateway.amazonaws.com",
+        "iam.amazonaws.com"
+      ]
+    },
+    {
+      "phase": "Mass_Exploitation",
+      "start": "2019-08-21",
+      "end": "2019-08-23",
+      "total_events": 1329966,
+      "hourly_peak": 39246,
+      "unique_ips": 130,
+      "runinstances_attempts": 1299186,
+      "error_rate": 98.54951179203077
+    }
+  ],
+  "ip_intelligence": {
+    "total_unique_ips": 9402,
+    "top_ips": {
+      "5.205.62.253": {
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 1321919,
+        "top_actions": {
+          "RunInstances": 1299186,
+          "GetCallerIdentity": 4697,
+          "DescribeInstances": 4684
+        }
+      },
+      "ec2.amazonaws.com": {
+        "users": [
+          "Unknown",
+          "null"
+        ],
+        "events": 44158,
+        "top_actions": {
+          "AssumeRole": 43555,
+          "SharedSnapshotVolumeCreated": 559,
+          "SharedSnapshotCopyInitiated": 44
+        }
+      },
+      "255.253.125.115": {
+        "users": [
+          "811596193553",
+          "backup",
+          "Level5",
+          "Level6",
+          "piper",
+          "SecurityMokey",
+          "AROAUB2AA5FQRGAHITW4A:secmonkey",
+          "AROAUB2AA5FQRGAHITW4A:cloudaux",
+          "AIDA8M82W7I80M2DIZCF5",
+          "AROAJAOHYNIDFQXF4AIZZ:audit"
+        ],
+        "events": 30197,
+        "top_actions": {
+          "AssumeRole": 4526,
+          "GetPolicyVersion": 3980,
+          "ListEntitiesForPolicy": 2874
+        }
+      },
+      "193.29.252.218": {
+        "users": [
+          "backup"
+        ],
+        "events": 23498,
+        "top_actions": {
+          "GetBucketAcl": 23469,
+          "GetCallerIdentity": 8,
+          "DescribeSnapshots": 8
+        }
+      },
+      "240.252.161.77": {
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 22394,
+        "top_actions": {
+          "ListPolicyVersions": 5420,
+          "GetPolicyVersion": 5134,
+          "ListEntitiesForPolicy": 2000
+        }
+      },
+      "0.52.31.206": {
+        "users": [
+          "backup",
+          "Level6",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a"
+        ],
+        "events": 18774,
+        "top_actions": {
+          "CreateBucket": 1334,
+          "GetBucketNotification": 1328,
+          "GetBucketLifecycle": 1328
+        }
+      },
+      "155.63.17.217": {
+        "users": [
+          "backup"
+        ],
+        "events": 15925,
+        "top_actions": {
+          "RunInstances": 8431,
+          "DescribeInstances": 5510,
+          "CreateDefaultVpc": 1799
+        }
+      },
+      "24.251.252.2": {
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 10208,
+        "top_actions": {
+          "RunInstances": 10063,
+          "DescribeKeyPairs": 32,
+          "CreateDefaultVpc": 32
+        }
+      },
+      "251.105.254.1": {
+        "users": [
+          "backup",
+          "811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a",
+          "Level6"
+        ],
+        "events": 10106,
+        "top_actions": {
+          "DescribeSnapshots": 241,
+          "GetCallerIdentity": 116,
+          "DescribeDBInstances": 115
+        }
+      },
+      "255.171.1.252": {
+        "users": [
+          "backup",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a",
+          "Level6"
+        ],
+        "events": 9780,
+        "top_actions": {
+          "GetPolicyVersion": 386,
+          "GetCallerIdentity": 377,
+          "DescribeTrails": 285
+        }
+      }
+    }
+  },
+  "behavioral_sequences": {
+    "Level5": [
+      {
+        "session": 0,
+        "start": "2017-02-19 23:38:17+00:00",
+        "duration_minutes": 150.95,
+        "actions": [
+          "DescribeLoadBalancers",
+          "ListFunctions202224",
+          "GetPolicy202224v2",
+          "ListDistributions",
+          "GetResources",
+          "GetPolicy202224v2",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListAccessKeys",
+          "GetUser",
+          "GetAccountSummary",
+          "GetUser",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListAttachedUserPolicies",
+          "GetStages",
+          "GetStages"
+        ]
+      },
+      {
+        "session": 1,
+        "start": "2017-02-23 03:59:09+00:00",
+        "duration_minutes": 10.2,
+        "actions": [
+          "GetUser",
+          "ListAttachedUserPolicies",
+          "GetPolicy",
+          "GetPolicyVersion",
+          "ListFunctions202224",
+          "GetPolicy202224v2",
+          "GetStages"
+        ]
+      }
+    ],
+    "Level6": [
+      {
+        "session": 0,
+        "start": "2017-02-26 23:13:33+00:00",
+        "duration_minutes": 74.93333333333334,
+        "actions": [
+          "GetUser",
+          "ListAttachedUserPolicies",
+          "GetPolicy",
+          "GetPolicyVersion",
+          "ListFunctions202224",
+          "ListFunctions202224",
+          "ListFunctions202224",
+          "GetPolicy202224v2",
+          "GetPolicy202224v2",
+          "GetStages",
+          "GetStages",
+          "GetPolicy202224v2",
+          "GetStages",
+          "ListFunctions202224",
+          "GetPolicy202224v2"
+        ]
+      },
+      {
+        "session": 1,
+        "start": "2017-02-27 20:58:35+00:00",
+        "duration_minutes": 17.216666666666665,
+        "actions": [
+          "ListBuckets",
+          "GetAccountAuthorizationDetails",
+          "GetAccountAuthorizationDetails",
+          "GetCallerIdentity",
+          "GetCallerIdentity",
+          "GetAccountAuthorizationDetails",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies"
+        ]
+      },
+      {
+        "session": 2,
+        "start": "2017-02-28 07:49:19+00:00",
+        "duration_minutes": 51.3,
+        "actions": [
+          "ListBuckets",
+          "GetUser",
+          "ListUserPolicies",
+          "ListGroups",
+          "ListRoles",
+          "GetUser",
+          "GetUser",
+          "ListUsers",
+          "ListRoles",
+          "GetAccountSettings08306",
+          "ListFunctions202224",
+          "GetFunction202224v2",
+          "GetFunction202224v2",
+          "GetFunction202224v2",
+          "GetUser",
+          "GetRole",
+          "GetRole",
+          "GetSessionToken",
+          "ListRoles",
+          "AssumeRole"
+        ]
+      },
+      {
+        "session": 3,
+        "start": "2017-02-28 14:09:00+00:00",
+        "duration_minutes": 87.51666666666667,
+        "actions": [
+          "GetUser",
+          "ListAttachedUserPolicies",
+          "GetPolicy",
+          "GetPolicyVersion",
+          "ListFunctions202224",
+          "GetPolicy202224v2",
+          "GetStages",
+          "ListRoles",
+          "ListRoles",
+          "ListRoles",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies",
+          "ListPolicies"
+        ]
+      },
+      {
+        "session": 4,
+        "start": "2017-02-28 17:18:55+00:00",
+        "duration_minutes": 4.266666666666667,
+        "actions": [
+          "ListBuckets",
+          "GetUser",
+          "GetUser",
+          "ListAttachedUserPolicies",
+          "ListAttachedUserPolicies",
+          "GetPolicy",
+          "GetPolicy",
+          "GetPolicy",
+          "GetPolicy",
+          "GetPolicyVersion",
+          "GetPolicyVersion",
+          "ListFunctions202224",
+          "GetPolicy202224v2",
+          "GetStages"
+        ]
+      }
+    ],
+    "backup": [
+      {
+        "session": 0,
+        "start": "2017-02-12 21:15:12+00:00",
+        "duration_minutes": 38.05,
+        "actions": [
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets",
+          "ListBuckets"
+        ]
+      },
+      {
+        "session": 1,
+        "start": "2017-02-12 23:06:45+00:00",
+        "duration_minutes": 65.83333333333333,
+        "actions": [
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "ListBuckets",
+          "GetCallerIdentity",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "CopySnapshot",
+          "DescribeSnapshots"
+        ]
+      },
+      {
+        "session": 2,
+        "start": "2017-02-13 03:06:02+00:00",
+        "duration_minutes": 11.05,
+        "actions": [
+          "DescribeInstances",
+          "DescribeInstances",
+          "DescribeInstances",
+          "DescribeInstances",
+          "DescribeInstances",
+          "DescribeInstances"
+        ]
+      },
+      {
+        "session": 8,
+        "start": "2017-02-27 12:04:50+00:00",
+        "duration_minutes": 2.55,
+        "actions": [
+          "ListBuckets",
+          "GetCallerIdentity",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots"
+        ]
+      },
+      {
+        "session": 9,
+        "start": "2017-02-27 13:38:24+00:00",
+        "duration_minutes": 130.86666666666667,
+        "actions": [
+          "ListBuckets",
+          "ListBuckets",
+          "GetCallerIdentity",
+          "DescribeSnapshots",
+          "GetCallerIdentity",
+          "ListBuckets",
+          "ListBuckets",
+          "DescribeInstanceStatus",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeSnapshots",
+          "DescribeInstanceStatus",
+          "GetCallerIdentity",
+          "DescribeSnapshots",
+          "DescribeSnapshots"
+        ]
+      }
+    ]
+  },
+  "error_analysis": {
+    "total_errors": 1507714,
+    "error_rate": 77.74899739945246,
+    "top_errors": {
+      "Client.RequestLimitExceeded": 779330,
+      "Client.UnauthorizedOperation": 351760,
+      "AccessDenied": 120988,
+      "Client.Unsupported": 101226,
+      "Server.InsufficientInstanceCapacity": 59323
+    },
+    "by_user": {
+      "Level5": {
+        "errors": 3,
+        "error_rate": 7.6923076923076925,
+        "top_failures": {
+          "GetResources": 1,
+          "GetUserPolicy": 1,
+          "GetRestApis": 1
+        }
+      },
+      "Level6": {
+        "errors": 742136,
+        "error_rate": 81.9965483790419,
+        "top_failures": {
+          "RunInstances": 682333,
+          "AssumeRole": 5268,
+          "GetBucketAcl": 4678
+        }
+      },
+      "backup": {
+        "errors": 742447,
+        "error_rate": 81.0678572754451,
+        "top_failures": {
+          "RunInstances": 640767,
+          "GetBucketAcl": 36186,
+          "AssumeRole": 11603
+        }
+      }
+    }
+  },
+  "user_correlations": {
+    "shared_ips": [
+      {
+        "ip": "5.205.62.253",
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 1321919
+      },
+      {
+        "ip": "ec2.amazonaws.com",
+        "users": [
+          "Unknown",
+          "null"
+        ],
+        "events": 44158
+      },
+      {
+        "ip": "255.253.125.115",
+        "users": [
+          "811596193553",
+          "backup",
+          "Level5",
+          "Level6",
+          "piper",
+          "SecurityMokey",
+          "AROAUB2AA5FQRGAHITW4A:secmonkey",
+          "AROAUB2AA5FQRGAHITW4A:cloudaux",
+          "AIDA8M82W7I80M2DIZCF5",
+          "AROAJAOHYNIDFQXF4AIZZ:audit"
+        ],
+        "events": 30197
+      },
+      {
+        "ip": "240.252.161.77",
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 22394
+      },
+      {
+        "ip": "0.52.31.206",
+        "users": [
+          "backup",
+          "Level6",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a"
+        ],
+        "events": 18774
+      },
+      {
+        "ip": "24.251.252.2",
+        "users": [
+          "Level6",
+          "backup"
+        ],
+        "events": 10208
+      },
+      {
+        "ip": "251.105.254.1",
+        "users": [
+          "backup",
+          "811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a",
+          "Level6"
+        ],
+        "events": 10106
+      },
+      {
+        "ip": "255.171.1.252",
+        "users": [
+          "backup",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a",
+          "Level6"
+        ],
+        "events": 9780
+      },
+      {
+        "ip": "60.219.252.71",
+        "users": [
+          "",
+          "backup",
+          "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a",
+          "811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a",
+          "Level6"
+        ],
+        "events": 9216
+      },
+      {
+        "ip": "config.amazonaws.com",
+        "users": [
+          "Unknown",
+          "AROASM3HWKK95VDO4HH81:AWSConfig-BucketConfigCheck",
+          "AROASM3HWKK95VDO4HH81:AWSConfig-Describe",
+          "AROASM3HWKK95VDO4HH81:AWSConfig-ConfigRuleValidation",
+          "AROASM3HWKK95VDO4HH81:configLambdaExecution"
+        ],
+        "events": 7833
+      },
+      {
+        "ip": "237.87.246.92",
+        "users": [
+          "backup",
+          "Level6"
+        ],
+        "events": 4737
+      }
+    ]
+  },
+  "hourly_explosion": [
+    {
+      "hour": "2019-08-01 16:00:00+00:00",
+      "events": 2442,
+      "users": {
+        "Level6": 2438,
+        "Unknown": 2,
+        "backup": 2
+      },
+      "top_action": "GetAccountPasswordPolicy",
+      "error_rate": 10.81081081081081
+    },
+    {
+      "hour": "2019-08-11 19:00:00+00:00",
+      "events": 1848,
+      "users": {
+        "Level6": 1840,
+        "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a": 6,
+        "Unknown": 2
+      },
+      "top_action": "DescribeVpcs",
+      "error_rate": 16.017316017316016
+    },
+    {
+      "hour": "2019-08-16 08:00:00+00:00",
+      "events": 1528,
+      "users": {
+        "backup": 1526,
+        "Unknown": 2
+      },
+      "top_action": "DescribeVpcs",
+      "error_rate": 59.554973821989535
+    },
+    {
+      "hour": "2019-08-17 17:00:00+00:00",
+      "events": 2148,
+      "users": {
+        "Level6": 2140,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "DescribeLoadBalancers",
+      "error_rate": 18.34264432029795
+    },
+    {
+      "hour": "2019-08-20 13:00:00+00:00",
+      "events": 2296,
+      "users": {
+        "Level6": 2190,
+        "backup": 102,
+        "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a": 2,
+        "Unknown": 2
+      },
+      "top_action": "DescribeSnapshots",
+      "error_rate": 20.993031358885016
+    },
+    {
+      "hour": "2019-08-21 07:00:00+00:00",
+      "events": 15726,
+      "users": {
+        "backup": 7932,
+        "Level6": 7792,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.27038026198652
+    },
+    {
+      "hour": "2019-08-21 08:00:00+00:00",
+      "events": 31520,
+      "users": {
+        "Level6": 16024,
+        "backup": 15338,
+        "Unknown": 82,
+        "AROALU79802HKVI57MABN:AWSServiceRoleForSupport": 76
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.52791878172589
+    },
+    {
+      "hour": "2019-08-21 09:00:00+00:00",
+      "events": 31406,
+      "users": {
+        "Level6": 16626,
+        "backup": 14768,
+        "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a": 10,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.74546265044896
+    },
+    {
+      "hour": "2019-08-21 10:00:00+00:00",
+      "events": 29620,
+      "users": {
+        "Level6": 15074,
+        "backup": 14538,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.71708305199189
+    },
+    {
+      "hour": "2019-08-21 11:00:00+00:00",
+      "events": 29908,
+      "users": {
+        "Level6": 15228,
+        "backup": 14678,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.18108867192724
+    },
+    {
+      "hour": "2019-08-21 12:00:00+00:00",
+      "events": 26228,
+      "users": {
+        "backup": 13248,
+        "Level6": 12976,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.87143510751868
+    },
+    {
+      "hour": "2019-08-21 13:00:00+00:00",
+      "events": 21396,
+      "users": {
+        "Level6": 10824,
+        "backup": 10568,
+        "Unknown": 2,
+        "AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.58852121891942
+    },
+    {
+      "hour": "2019-08-21 14:00:00+00:00",
+      "events": 22346,
+      "users": {
+        "backup": 11338,
+        "Level6": 10996,
+        "Unknown": 8,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.43372415644858
+    },
+    {
+      "hour": "2019-08-21 15:00:00+00:00",
+      "events": 28242,
+      "users": {
+        "backup": 14582,
+        "Level6": 13658,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.97316054103817
+    },
+    {
+      "hour": "2019-08-21 16:00:00+00:00",
+      "events": 14176,
+      "users": {
+        "backup": 7286,
+        "Level6": 6888,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.68792325056434
+    },
+    {
+      "hour": "2019-08-21 17:00:00+00:00",
+      "events": 25766,
+      "users": {
+        "backup": 12938,
+        "Level6": 12826,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.90553442521151
+    },
+    {
+      "hour": "2019-08-21 18:00:00+00:00",
+      "events": 32450,
+      "users": {
+        "Level6": 16826,
+        "backup": 15620,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.10015408320493
+    },
+    {
+      "hour": "2019-08-21 19:00:00+00:00",
+      "events": 34224,
+      "users": {
+        "Level6": 17896,
+        "backup": 16326,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.83122954651706
+    },
+    {
+      "hour": "2019-08-21 20:00:00+00:00",
+      "events": 31712,
+      "users": {
+        "Level6": 16414,
+        "backup": 15296,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.83955600403633
+    },
+    {
+      "hour": "2019-08-21 21:00:00+00:00",
+      "events": 5070,
+      "users": {
+        "Level6": 3748,
+        "backup": 1320,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.72386587771204
+    },
+    {
+      "hour": "2019-08-21 22:00:00+00:00",
+      "events": 15540,
+      "users": {
+        "Level6": 8148,
+        "backup": 7384,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.68725868725868
+    },
+    {
+      "hour": "2019-08-21 23:00:00+00:00",
+      "events": 26168,
+      "users": {
+        "Level6": 14310,
+        "backup": 11856,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.80006114338123
+    },
+    {
+      "hour": "2019-08-22 00:00:00+00:00",
+      "events": 29886,
+      "users": {
+        "Level6": 15990,
+        "backup": 13892,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.56789132035067
+    },
+    {
+      "hour": "2019-08-22 01:00:00+00:00",
+      "events": 28704,
+      "users": {
+        "Level6": 17190,
+        "backup": 11512,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.62040133779264
+    },
+    {
+      "hour": "2019-08-22 02:00:00+00:00",
+      "events": 23492,
+      "users": {
+        "Level6": 14520,
+        "backup": 8964,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.72296952153926
+    },
+    {
+      "hour": "2019-08-22 03:00:00+00:00",
+      "events": 27548,
+      "users": {
+        "backup": 14522,
+        "Level6": 13024,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.94729199941919
+    },
+    {
+      "hour": "2019-08-22 04:00:00+00:00",
+      "events": 32482,
+      "users": {
+        "Level6": 17190,
+        "backup": 15290,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.83627855427622
+    },
+    {
+      "hour": "2019-08-22 05:00:00+00:00",
+      "events": 24328,
+      "users": {
+        "Level6": 13052,
+        "backup": 11274,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.64353830976653
+    },
+    {
+      "hour": "2019-08-22 06:00:00+00:00",
+      "events": 12814,
+      "users": {
+        "Level6": 8174,
+        "backup": 4636,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 97.8617137505853
+    },
+    {
+      "hour": "2019-08-22 07:00:00+00:00",
+      "events": 39246,
+      "users": {
+        "backup": 19700,
+        "Level6": 19538,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.15405391632268
+    },
+    {
+      "hour": "2019-08-22 08:00:00+00:00",
+      "events": 26088,
+      "users": {
+        "Level6": 13694,
+        "backup": 12384,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.87304507819688
+    },
+    {
+      "hour": "2019-08-22 09:00:00+00:00",
+      "events": 32044,
+      "users": {
+        "backup": 16474,
+        "Level6": 15562,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 4,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.92023467731869
+    },
+    {
+      "hour": "2019-08-22 10:00:00+00:00",
+      "events": 32714,
+      "users": {
+        "Level6": 18594,
+        "backup": 14112,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.13798373784924
+    },
+    {
+      "hour": "2019-08-22 11:00:00+00:00",
+      "events": 36028,
+      "users": {
+        "Level6": 18862,
+        "backup": 17160,
+        "Unknown": 4,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.26723659376042
+    },
+    {
+      "hour": "2019-08-22 12:00:00+00:00",
+      "events": 21932,
+      "users": {
+        "Level6": 11244,
+        "backup": 10684,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.2248768922123
+    },
+    {
+      "hour": "2019-08-22 13:00:00+00:00",
+      "events": 27854,
+      "users": {
+        "Level6": 14094,
+        "backup": 13758,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.2388884899835
+    },
+    {
+      "hour": "2019-08-22 14:00:00+00:00",
+      "events": 23532,
+      "users": {
+        "backup": 11996,
+        "Level6": 11534,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.98011218765936
+    },
+    {
+      "hour": "2019-08-22 15:00:00+00:00",
+      "events": 16064,
+      "users": {
+        "Level6": 9928,
+        "backup": 6134,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.0288844621514
+    },
+    {
+      "hour": "2019-08-22 16:00:00+00:00",
+      "events": 20078,
+      "users": {
+        "Level6": 10210,
+        "backup": 9866,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.94411794003388
+    },
+    {
+      "hour": "2019-08-22 17:00:00+00:00",
+      "events": 20992,
+      "users": {
+        "Level6": 10752,
+        "backup": 10238,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.26638719512195
+    },
+    {
+      "hour": "2019-08-22 18:00:00+00:00",
+      "events": 25708,
+      "users": {
+        "backup": 13320,
+        "Level6": 12380,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.99642134744049
+    },
+    {
+      "hour": "2019-08-22 19:00:00+00:00",
+      "events": 16664,
+      "users": {
+        "Level6": 9536,
+        "backup": 7116,
+        "Unknown": 8,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.13970235237637
+    },
+    {
+      "hour": "2019-08-22 20:00:00+00:00",
+      "events": 18656,
+      "users": {
+        "backup": 9714,
+        "Level6": 8940,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.74571183533448
+    },
+    {
+      "hour": "2019-08-22 21:00:00+00:00",
+      "events": 19116,
+      "users": {
+        "backup": 9962,
+        "Level6": 9152,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.22577945176815
+    },
+    {
+      "hour": "2019-08-22 22:00:00+00:00",
+      "events": 18884,
+      "users": {
+        "backup": 9716,
+        "Level6": 9160,
+        "Unknown": 6,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.96208430417285
+    },
+    {
+      "hour": "2019-08-22 23:00:00+00:00",
+      "events": 16834,
+      "users": {
+        "Level6": 8590,
+        "backup": 8242,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.97825828680052
+    },
+    {
+      "hour": "2019-08-23 00:00:00+00:00",
+      "events": 17446,
+      "users": {
+        "Level6": 9246,
+        "backup": 8196,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.96824486988422
+    },
+    {
+      "hour": "2019-08-23 01:00:00+00:00",
+      "events": 19520,
+      "users": {
+        "Level6": 10392,
+        "backup": 9126,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.9344262295082
+    },
+    {
+      "hour": "2019-08-23 02:00:00+00:00",
+      "events": 17132,
+      "users": {
+        "Level6": 8704,
+        "backup": 8426,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.99603081951904
+    },
+    {
+      "hour": "2019-08-23 03:00:00+00:00",
+      "events": 18378,
+      "users": {
+        "backup": 9206,
+        "Level6": 9170,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.93350745456524
+    },
+    {
+      "hour": "2019-08-23 04:00:00+00:00",
+      "events": 17932,
+      "users": {
+        "Level6": 9496,
+        "backup": 8434,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.90698193174214
+    },
+    {
+      "hour": "2019-08-23 05:00:00+00:00",
+      "events": 15522,
+      "users": {
+        "Level6": 8350,
+        "backup": 7170,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.85324056178327
+    },
+    {
+      "hour": "2019-08-23 06:00:00+00:00",
+      "events": 14926,
+      "users": {
+        "Level6": 7558,
+        "backup": 7364,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.7940506498727
+    },
+    {
+      "hour": "2019-08-23 07:00:00+00:00",
+      "events": 11908,
+      "users": {
+        "Level6": 6012,
+        "backup": 5894,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.95868323815921
+    },
+    {
+      "hour": "2019-08-23 08:00:00+00:00",
+      "events": 15136,
+      "users": {
+        "backup": 7698,
+        "Level6": 7436,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.19397463002115
+    },
+    {
+      "hour": "2019-08-23 09:00:00+00:00",
+      "events": 14736,
+      "users": {
+        "backup": 7670,
+        "Level6": 7064,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.87350705754615
+    },
+    {
+      "hour": "2019-08-23 10:00:00+00:00",
+      "events": 15916,
+      "users": {
+        "Level6": 8324,
+        "backup": 7590,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.8816285498869
+    },
+    {
+      "hour": "2019-08-23 11:00:00+00:00",
+      "events": 13886,
+      "users": {
+        "Level6": 7584,
+        "backup": 6300,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.96298430073456
+    },
+    {
+      "hour": "2019-08-23 12:00:00+00:00",
+      "events": 13362,
+      "users": {
+        "Level6": 6994,
+        "backup": 6364,
+        "Unknown": 4
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.90734919922167
+    },
+    {
+      "hour": "2019-08-23 13:00:00+00:00",
+      "events": 16018,
+      "users": {
+        "backup": 8434,
+        "Level6": 7582,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.16344112873018
+    },
+    {
+      "hour": "2019-08-23 14:00:00+00:00",
+      "events": 15756,
+      "users": {
+        "backup": 8076,
+        "Level6": 7678,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.7941101802488
+    },
+    {
+      "hour": "2019-08-23 15:00:00+00:00",
+      "events": 3532,
+      "users": {
+        "Level6": 2386,
+        "backup": 953,
+        "flaws": 191,
+        "811596193553": 1,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 93.51642129105323
+    },
+    {
+      "hour": "2019-08-23 16:00:00+00:00",
+      "events": 7088,
+      "users": {
+        "Level6": 3817,
+        "backup": 3270,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.05474040632055
+    },
+    {
+      "hour": "2019-08-23 17:00:00+00:00",
+      "events": 2895,
+      "users": {
+        "Level6": 2137,
+        "backup": 757,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.860103626943
+    },
+    {
+      "hour": "2019-08-23 18:00:00+00:00",
+      "events": 9217,
+      "users": {
+        "Level6": 4716,
+        "backup": 4496,
+        "Unknown": 4,
+        "AROAI4E1FBACLY3FPC6BB:Level6": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.94759683194097
+    },
+    {
+      "hour": "2019-08-23 19:00:00+00:00",
+      "events": 9624,
+      "users": {
+        "Level6": 4935,
+        "backup": 4688,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.24147963424771
+    },
+    {
+      "hour": "2019-08-23 20:00:00+00:00",
+      "events": 9337,
+      "users": {
+        "Level6": 4747,
+        "backup": 4589,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.98254257256079
+    },
+    {
+      "hour": "2019-08-23 21:00:00+00:00",
+      "events": 9249,
+      "users": {
+        "Level6": 4669,
+        "backup": 4569,
+        "flaws": 10,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.91880203265218
+    },
+    {
+      "hour": "2019-08-23 22:00:00+00:00",
+      "events": 7354,
+      "users": {
+        "backup": 3835,
+        "Level6": 3518,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.9937449007343
+    },
+    {
+      "hour": "2019-08-23 23:00:00+00:00",
+      "events": 5677,
+      "users": {
+        "Level6": 3667,
+        "backup": 2009,
+        "Unknown": 1
+      },
+      "top_action": "RunInstances",
+      "error_rate": 98.96071868944865
+    },
+    {
+      "hour": "2019-08-24 00:00:00+00:00",
+      "events": 8599,
+      "users": {
+        "Level6": 4463,
+        "backup": 4134,
+        "Unknown": 2
+      },
+      "top_action": "RunInstances",
+      "error_rate": 99.27898592859636
+    },
+    {
+      "hour": "2019-08-28 21:00:00+00:00",
+      "events": 1681,
+      "users": {
+        "Level6": 1680,
+        "Unknown": 1
+      },
+      "top_action": "GetBucketLifecycle",
+      "error_rate": 88.39976204640095
+    }
+  ],
+  "prompts": {
+    "attack_phases": "Analyze these distinct attack phases:\n\n[\n  {\n    \"phase\": \"Initial_Reconnaissance\",\n    \"start\": \"2017-02-19 23:38:17+00:00\",\n    \"end\": \"2017-02-23 04:09:21+00:00\",\n    \"duration_hours\": 76.51777777777778,\n    \"events\": 39,\n    \"unique_actions\": 15,\n    \"action_sequence\": [\n      \"DescribeLoadBalancers\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"ListDistributions\",\n      \"GetResources\",\n      \"GetPolicy202224v2\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListAccessKeys\",\n      \"GetUser\",\n      \"GetAccountSummary\",\n      \"GetUser\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListAttachedUserPolicies\",\n      \"GetStages\",\n      \"GetStages\",\n      \"GetStages\",\n      \"ListAttachedUserPolicies\",\n      \"GetUser\",\n      \"ListAttachedUserPolicies\",\n      \"GetUserPolicy\",\n      \"GetPolicy\",\n      \"GetPolicy\",\n      \"GetPolicyVersion\",\n      \"GetStages\",\n      \"GetRestApis\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"GetUser\",\n      \"ListAttachedUserPolicies\",\n      \"GetPolicy\",\n      \"GetPolicyVersion\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"GetStages\"\n    ],\n    \"services\": [\n      \"elasticloadbalancing.amazonaws.com\",\n      \"lambda.amazonaws.com\",\n      \"cloudfront.amazonaws.com\",\n      \"apigateway.amazonaws.com\",\n      \"iam.amazonaws.com\"\n    ]\n  },\n  {\n    \"phase\": \"Mass_Exploitation\",\n    \"start\": \"2019-08-21\",\n    \"end\": \"2019-08-23\",\n    \"total_events\": 1329966,\n    \"hourly_peak\": 39246,\n    \"unique_ips\": 130,\n    \"runinstances_attempts\": 1299186,\n    \"error_rate\": 98.54951179203077\n  }\n]\n\nQuestions:\n1. How does each phase differ in behavior and intent?\n2. What triggered the transition from reconnaissance to mass exploitation?\n3. Is this consistent with credential leakage patterns?",
+    "ip_intelligence": "Analyze IP address patterns:\n\nTotal unique IPs: 9402\n\nTop IPs and their behavior:\n{\n  \"5.205.62.253\": {\n    \"users\": [\n      \"Level6\",\n      \"backup\"\n    ],\n    \"events\": 1321919,\n    \"top_actions\": {\n      \"RunInstances\": 1299186,\n      \"GetCallerIdentity\": 4697,\n      \"DescribeInstances\": 4684\n    }\n  },\n  \"ec2.amazonaws.com\": {\n    \"users\": [\n      \"Unknown\",\n      \"null\"\n    ],\n    \"events\": 44158,\n    \"top_actions\": {\n      \"AssumeRole\": 43555,\n      \"SharedSnapshotVolumeCreated\": 559,\n      \"SharedSnapshotCopyInitiated\": 44\n    }\n  },\n  \"255.253.125.115\": {\n    \"users\": [\n      \"811596193553\",\n      \"backup\",\n      \"Level5\",\n      \"Level6\",\n      \"piper\",\n      \"SecurityMokey\",\n      \"AROAUB2AA5FQRGAHITW4A:secmonkey\",\n      \"AROAUB2AA5FQRGAHITW4A:cloudaux\",\n      \"AIDA8M82W7I80M2DIZCF5\",\n      \"AROAJAOHYNIDFQXF4AIZZ:audit\"\n    ],\n    \"events\": 30197,\n    \"top_actions\": {\n      \"AssumeRole\": 4526,\n      \"GetPolicyVersion\": 3980,\n      \"ListEntitiesForPolicy\": 2874\n    }\n  },\n  \"193.29.252.218\": {\n    \"users\": [\n      \"backup\"\n    ],\n    \"events\": 23498,\n    \"top_actions\": {\n      \"GetBucketAcl\": 23469,\n      \"GetCallerIdentity\": 8,\n      \"DescribeSnapshots\": 8\n    }\n  },\n  \"240.252.161.77\": {\n    \"users\": [\n      \"Level6\",\n      \"backup\"\n    ],\n    \"events\": 22394,\n    \"top_actions\": {\n      \"ListPolicyVersions\": 5420,\n      \"GetPolicyVersion\": 5134,\n      \"ListEntitiesForPolicy\": 2000\n    }\n  },\n  \"0.52.31.206\": {\n    \"users\": [\n      \"backup\",\n      \"Level6\",\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\"\n    ],\n    \"events\": 18774,\n    \"top_actions\": {\n      \"CreateBucket\": 1334,\n      \"GetBucketNotification\": 1328,\n      \"GetBucketLifecycle\": 1328\n    }\n  },\n  \"155.63.17.217\": {\n    \"users\": [\n      \"backup\"\n    ],\n    \"events\": 15925,\n    \"top_actions\": {\n      \"RunInstances\": 8431,\n      \"DescribeInstances\": 5510,\n      \"CreateDefaultVpc\": 1799\n    }\n  },\n  \"24.251.252.2\": {\n    \"users\": [\n      \"Level6\",\n      \"backup\"\n    ],\n    \"events\": 10208,\n    \"top_actions\": {\n      \"RunInstances\": 10063,\n      \"DescribeKeyPairs\": 32,\n      \"CreateDefaultVpc\": 32\n    }\n  },\n  \"251.105.254.1\": {\n    \"users\": [\n      \"backup\",\n      \"811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a\",\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\",\n      \"Level6\"\n    ],\n    \"events\": 10106,\n    \"top_actions\": {\n      \"DescribeSnapshots\": 241,\n      \"GetCallerIdentity\": 116,\n      \"DescribeDBInstances\": 115\n    }\n  },\n  \"255.171.1.252\": {\n    \"users\": [\n      \"backup\",\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\",\n      \"Level6\"\n    ],\n    \"events\": 9780,\n    \"top_actions\": {\n      \"GetPolicyVersion\": 386,\n      \"GetCallerIdentity\": 377,\n      \"DescribeTrails\": 285\n    }\n  }\n}\n\nQuestions:\n1. What do IP patterns reveal about attacker infrastructure?\n2. Is this coordinated or opportunistic?\n3. How many distinct threat actors are involved?",
+    "behavioral_sequences": "Analyze user behavioral sequences:\n\nLevel5 (Reconnaissance):\n[\n  {\n    \"session\": 0,\n    \"start\": \"2017-02-19 23:38:17+00:00\",\n    \"duration_minutes\": 150.95,\n    \"actions\": [\n      \"DescribeLoadBalancers\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"ListDistributions\",\n      \"GetResources\",\n      \"GetPolicy202224v2\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListAccessKeys\",\n      \"GetUser\",\n      \"GetAccountSummary\",\n      \"GetUser\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListAttachedUserPolicies\",\n      \"GetStages\",\n      \"GetStages\"\n    ]\n  },\n  {\n    \"session\": 1,\n    \"start\": \"2017-02-23 03:59:09+00:00\",\n    \"duration_minutes\": 10.2,\n    \"actions\": [\n      \"GetUser\",\n      \"ListAttachedUserPolicies\",\n      \"GetPolicy\",\n      \"GetPolicyVersion\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"GetStages\"\n    ]\n  }\n]\n\nLevel6 (Exploitation):\n[\n  {\n    \"session\": 0,\n    \"start\": \"2017-02-26 23:13:33+00:00\",\n    \"duration_minutes\": 74.93333333333334,\n    \"actions\": [\n      \"GetUser\",\n      \"ListAttachedUserPolicies\",\n      \"GetPolicy\",\n      \"GetPolicyVersion\",\n      \"ListFunctions202224\",\n      \"ListFunctions202224\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\",\n      \"GetPolicy202224v2\",\n      \"GetStages\",\n      \"GetStages\",\n      \"GetPolicy202224v2\",\n      \"GetStages\",\n      \"ListFunctions202224\",\n      \"GetPolicy202224v2\"\n    ]\n  },\n  {\n    \"session\": 1,\n    \"start\": \"2017-02-27 20:58:35+00:00\",\n    \"duration_minutes\": 17.216666666666665,\n    \"actions\": [\n      \"ListBuckets\",\n      \"GetAccountAuthorizationDetails\",\n      \"GetAccountAuthorizationDetails\",\n      \"GetCallerIdentity\",\n      \"GetCallerIdentity\",\n      \"GetAccountAuthorizationDetails\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\",\n      \"ListPolicies\"\n    ]\n  }\n]\n\nQuestions:\n1. How does manual reconnaissance differ from automated exploitation?\n2. What specific actions reveal attacker intent?\n3. Can you reconstruct the discovery process?",
+    "error_forensics": "Analyze error patterns:\n\n{\n  \"total_errors\": 1507714,\n  \"error_rate\": 77.74899739945246,\n  \"top_errors\": {\n    \"Client.RequestLimitExceeded\": 779330,\n    \"Client.UnauthorizedOperation\": 351760,\n    \"AccessDenied\": 120988,\n    \"Client.Unsupported\": 101226,\n    \"Server.InsufficientInstanceCapacity\": 59323\n  },\n  \"by_user\": {\n    \"Level5\": {\n      \"errors\": 3,\n      \"error_rate\": 7.6923076923076925,\n      \"top_failures\": {\n        \"GetResources\": 1,\n        \"GetUserPolicy\": 1,\n        \"GetRestApis\": 1\n      }\n    },\n    \"Level6\": {\n      \"errors\": 742136,\n      \"error_rate\": 81.9965483790419,\n      \"top_failures\": {\n        \"RunInstances\": 682333,\n        \"AssumeRole\": 5268,\n        \"GetBucketAcl\": 4678\n      }\n    },\n    \"backup\": {\n      \"errors\": 742447,\n      \"error_rate\": 81.0678572754451,\n      \"top_failures\": {\n        \"RunInstances\": 640767,\n        \"GetBucketAcl\": 36186,\n        \"AssumeRole\": 11603\n      }\n    }\n  }\n}\n\nQuestions:\n1. What do errors reveal about AWS defensive measures?\n2. How did attackers adapt to rate limiting?\n3. Which AWS security controls were most effective?",
+    "correlation_analysis": "Analyze cross-user correlations:\n\n{\n  \"shared_ips\": [\n    {\n      \"ip\": \"5.205.62.253\",\n      \"users\": [\n        \"Level6\",\n        \"backup\"\n      ],\n      \"events\": 1321919\n    },\n    {\n      \"ip\": \"ec2.amazonaws.com\",\n      \"users\": [\n        \"Unknown\",\n        \"null\"\n      ],\n      \"events\": 44158\n    },\n    {\n      \"ip\": \"255.253.125.115\",\n      \"users\": [\n        \"811596193553\",\n        \"backup\",\n        \"Level5\",\n        \"Level6\",\n        \"piper\",\n        \"SecurityMokey\",\n        \"AROAUB2AA5FQRGAHITW4A:secmonkey\",\n        \"AROAUB2AA5FQRGAHITW4A:cloudaux\",\n        \"AIDA8M82W7I80M2DIZCF5\",\n        \"AROAJAOHYNIDFQXF4AIZZ:audit\"\n      ],\n      \"events\": 30197\n    },\n    {\n      \"ip\": \"240.252.161.77\",\n      \"users\": [\n        \"Level6\",\n        \"backup\"\n      ],\n      \"events\": 22394\n    },\n    {\n      \"ip\": \"0.52.31.206\",\n      \"users\": [\n        \"backup\",\n        \"Level6\",\n        \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\"\n      ],\n      \"events\": 18774\n    },\n    {\n      \"ip\": \"24.251.252.2\",\n      \"users\": [\n        \"Level6\",\n        \"backup\"\n      ],\n      \"events\": 10208\n    },\n    {\n      \"ip\": \"251.105.254.1\",\n      \"users\": [\n        \"backup\",\n        \"811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a\",\n        \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\",\n        \"Level6\"\n      ],\n      \"events\": 10106\n    },\n    {\n      \"ip\": \"255.171.1.252\",\n      \"users\": [\n        \"backup\",\n        \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\",\n        \"Level6\"\n      ],\n      \"events\": 9780\n    },\n    {\n      \"ip\": \"60.219.252.71\",\n      \"users\": [\n        \"\",\n        \"backup\",\n        \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\",\n        \"811596193553:aws:ec2-instance:i-aa2d3b42e5c6e801a\",\n        \"Level6\"\n      ],\n      \"events\": 9216\n    },\n    {\n      \"ip\": \"config.amazonaws.com\",\n      \"users\": [\n        \"Unknown\",\n        \"AROASM3HWKK95VDO4HH81:AWSConfig-BucketConfigCheck\",\n        \"AROASM3HWKK95VDO4HH81:AWSConfig-Describe\",\n        \"AROASM3HWKK95VDO4HH81:AWSConfig-ConfigRuleValidation\",\n        \"AROASM3HWKK95VDO4HH81:configLambdaExecution\"\n      ],\n      \"events\": 7833\n    },\n    {\n      \"ip\": \"237.87.246.92\",\n      \"users\": [\n        \"backup\",\n        \"Level6\"\n      ],\n      \"events\": 4737\n    }\n  ]\n}\n\nQuestions:\n1. Are Level6 and backup the same attacker?\n2. What evidence supports coordination vs opportunistic abuse?\n3. How was the attack campaign organized?",
+    "explosion_timeline": "Analyze hourly breakdown of August 2019 explosion:\n\n[\n  {\n    \"hour\": \"2019-08-01 16:00:00+00:00\",\n    \"events\": 2442,\n    \"users\": {\n      \"Level6\": 2438,\n      \"Unknown\": 2,\n      \"backup\": 2\n    },\n    \"top_action\": \"GetAccountPasswordPolicy\",\n    \"error_rate\": 10.81081081081081\n  },\n  {\n    \"hour\": \"2019-08-11 19:00:00+00:00\",\n    \"events\": 1848,\n    \"users\": {\n      \"Level6\": 1840,\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\": 6,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"DescribeVpcs\",\n    \"error_rate\": 16.017316017316016\n  },\n  {\n    \"hour\": \"2019-08-16 08:00:00+00:00\",\n    \"events\": 1528,\n    \"users\": {\n      \"backup\": 1526,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"DescribeVpcs\",\n    \"error_rate\": 59.554973821989535\n  },\n  {\n    \"hour\": \"2019-08-17 17:00:00+00:00\",\n    \"events\": 2148,\n    \"users\": {\n      \"Level6\": 2140,\n      \"Unknown\": 6,\n      \"AROAI4E1FBACLY3FPC6BB:Level6\": 2\n    },\n    \"top_action\": \"DescribeLoadBalancers\",\n    \"error_rate\": 18.34264432029795\n  },\n  {\n    \"hour\": \"2019-08-20 13:00:00+00:00\",\n    \"events\": 2296,\n    \"users\": {\n      \"Level6\": 2190,\n      \"backup\": 102,\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\": 2,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"DescribeSnapshots\",\n    \"error_rate\": 20.993031358885016\n  },\n  {\n    \"hour\": \"2019-08-21 07:00:00+00:00\",\n    \"events\": 15726,\n    \"users\": {\n      \"backup\": 7932,\n      \"Level6\": 7792,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.27038026198652\n  },\n  {\n    \"hour\": \"2019-08-21 08:00:00+00:00\",\n    \"events\": 31520,\n    \"users\": {\n      \"Level6\": 16024,\n      \"backup\": 15338,\n      \"Unknown\": 82,\n      \"AROALU79802HKVI57MABN:AWSServiceRoleForSupport\": 76\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.52791878172589\n  },\n  {\n    \"hour\": \"2019-08-21 09:00:00+00:00\",\n    \"events\": 31406,\n    \"users\": {\n      \"Level6\": 16626,\n      \"backup\": 14768,\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\": 10,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.74546265044896\n  },\n  {\n    \"hour\": \"2019-08-21 10:00:00+00:00\",\n    \"events\": 29620,\n    \"users\": {\n      \"Level6\": 15074,\n      \"backup\": 14538,\n      \"Unknown\": 6,\n      \"AROAI4E1FBACLY3FPC6BB:Level6\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.71708305199189\n  },\n  {\n    \"hour\": \"2019-08-21 11:00:00+00:00\",\n    \"events\": 29908,\n    \"users\": {\n      \"Level6\": 15228,\n      \"backup\": 14678,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.18108867192724\n  },\n  {\n    \"hour\": \"2019-08-21 12:00:00+00:00\",\n    \"events\": 26228,\n    \"users\": {\n      \"backup\": 13248,\n      \"Level6\": 12976,\n      \"Unknown\": 4\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.87143510751868\n  },\n  {\n    \"hour\": \"2019-08-21 13:00:00+00:00\",\n    \"events\": 21396,\n    \"users\": {\n      \"Level6\": 10824,\n      \"backup\": 10568,\n      \"Unknown\": 2,\n      \"AROACW5CSA8C8WHOB3O7Q:i-aa2d3b42e5c6e801a\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.58852121891942\n  },\n  {\n    \"hour\": \"2019-08-21 14:00:00+00:00\",\n    \"events\": 22346,\n    \"users\": {\n      \"backup\": 11338,\n      \"Level6\": 10996,\n      \"Unknown\": 8,\n      \"AROAI4E1FBACLY3FPC6BB:Level6\": 4\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.43372415644858\n  },\n  {\n    \"hour\": \"2019-08-21 15:00:00+00:00\",\n    \"events\": 28242,\n    \"users\": {\n      \"backup\": 14582,\n      \"Level6\": 13658,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.97316054103817\n  },\n  {\n    \"hour\": \"2019-08-21 16:00:00+00:00\",\n    \"events\": 14176,\n    \"users\": {\n      \"backup\": 7286,\n      \"Level6\": 6888,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.68792325056434\n  },\n  {\n    \"hour\": \"2019-08-21 17:00:00+00:00\",\n    \"events\": 25766,\n    \"users\": {\n      \"backup\": 12938,\n      \"Level6\": 12826,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.90553442521151\n  },\n  {\n    \"hour\": \"2019-08-21 18:00:00+00:00\",\n    \"events\": 32450,\n    \"users\": {\n      \"Level6\": 16826,\n      \"backup\": 15620,\n      \"Unknown\": 4\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 99.10015408320493\n  },\n  {\n    \"hour\": \"2019-08-21 19:00:00+00:00\",\n    \"events\": 34224,\n    \"users\": {\n      \"Level6\": 17896,\n      \"backup\": 16326,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.83122954651706\n  },\n  {\n    \"hour\": \"2019-08-21 20:00:00+00:00\",\n    \"events\": 31712,\n    \"users\": {\n      \"Level6\": 16414,\n      \"backup\": 15296,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 98.83955600403633\n  },\n  {\n    \"hour\": \"2019-08-21 21:00:00+00:00\",\n    \"events\": 5070,\n    \"users\": {\n      \"Level6\": 3748,\n      \"backup\": 1320,\n      \"Unknown\": 2\n    },\n    \"top_action\": \"RunInstances\",\n    \"error_rate\": 99.72386587771204\n  }\n]\n\nQuestions:\n1. At what exact hour did the explosion start?\n2. What was the peak intensity and why?\n3. How did the attack evolve hour by hour?"
+  },
+  "statistics": {
+    "total_events": 1939207,
+    "date_range": "2017-02-12 19:57:06+00:00 to 2020-10-07 21:03:30+00:00",
+    "unique_users": 117,
+    "unique_ips": 9402,
+    "total_errors": 1507714,
+    "overall_error_rate": 77.74899739945246
+  }
+}
