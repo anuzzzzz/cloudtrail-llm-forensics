@@ -1,29 +1,29 @@
-# Cloud Forensics with LLMs - My Capstone Journey
+# Cloud Forensics with LLMs - Our Capstone Journey
 
-**Anuj**
-Master's Capstone Project
+**Team Project**
+Master's Capstone
 November 6 - December 6, 2024
 
 ---
 
 ## Table of Contents
 
-1. [What I Was Trying to Do](#what-i-was-trying-to-do)
+1. [What We Were Trying to Do](#what-we-were-trying-to-do)
 2. [The Data Problem](#the-data-problem)
-3. [All the Things I Tried That Failed](#all-the-things-i-tried-that-failed)
+3. [All the Things We Tried That Failed](#all-the-things-we-tried-that-failed)
 4. [What Actually Worked](#what-actually-worked)
 5. [Final Results](#final-results)
 6. [Code & Deliverables](#code--deliverables)
 
 ---
 
-## What I Was Trying to Do
+## What We Were Trying to Do
 
 **The Big Idea:** Can we use AI/LLMs to automate cloud forensic investigations?
 
 **Why this matters:** When a company gets hacked on AWS, security analysts have to manually go through MILLIONS of CloudTrail log events to figure out what the attacker did. This takes like 40+ hours per incident. That's insane.
 
-**What I wanted to build:** An automated system that could:
+**What we wanted to build:** An automated system that could:
 1. Read AWS CloudTrail logs
 2. Figure out which events are attacks vs normal activity
 3. Reconstruct what the attacker did step-by-step
@@ -49,13 +49,13 @@ GetUser, flaws, null, Legit
 ...
 ```
 
-**First problem I noticed:**
+**First problem we noticed:**
 - Only 493 events (lol that's nothing - real datasets are millions)
 - Labels seemed... too perfect?
 - Every single event with `errorCode = AccessDenied` was labeled "Malicious"
 - 100% correlation. That's not how real attacks work.
 
-I tried training a simple ML model on this:
+We tried training a simple ML model on this:
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -66,7 +66,7 @@ model.fit(X_train, y_train)
 # Result: 98% accuracy!!!
 ```
 
-But then I realized: The model just learned "if errorCode == AccessDenied, predict Malicious". That's it. That's not actually learning to detect attacks - it's learning the labeling rules.
+But then we realized: The model just learned "if errorCode == AccessDenied, predict Malicious". That's it. That's not actually learning to detect attacks - it's learning the labeling rules.
 
 This dataset was from a CTF (Capture The Flag) challenge. It's intentionally designed with obvious attack patterns for students to practice on. Not realistic at all.
 
@@ -76,20 +76,20 @@ This dataset was from a CTF (Capture The Flag) challenge. It's intentionally des
 
 ### Week 2: Trying to Find Real Labeled Data
 
-OK so the professor's dataset won't work. Let me find better data.
+OK so the professor's dataset won't work. Let's find better data.
 
-**What I looked for:**
+**What we looked for:**
 - AWS CloudTrail logs with labels (which events are attacks)
 - From real companies or realistic scenarios
 - With enough data to train an ML model
 
-**Where I looked:**
+**Where we looked:**
 - Kaggle datasets → Found network intrusion datasets (not cloud)
 - AWS Security Hub → No public datasets
 - GitHub → Some small examples, nothing substantial
 - Research papers → They all use either synthetic data or proprietary company data
 
-**What I learned the hard way:**
+**What we learned the hard way:**
 
 1. **No company shares their real attack logs publicly**
    - It would expose their vulnerabilities
@@ -105,21 +105,21 @@ OK so the professor's dataset won't work. Let me find better data.
    - Use their own company's proprietary logs
    - Or they just don't do this kind of research
 
-**Verdict:** I'm stuck. No good labeled data exists.
+**Verdict:** We're stuck. No good labeled data exists.
 
 ---
 
-### Week 2-3: Maybe I Can Generate Synthetic Data?
+### Week 2-3: Maybe We Can Generate Synthetic Data?
 
-Since real data doesn't exist, what if I just... make some?
+Since real data doesn't exist, what if we just... make some?
 
-**The idea:** Use AWS to generate my own CloudTrail logs:
+**The idea:** Use AWS to generate our own CloudTrail logs:
 1. Set up a test AWS account
 2. Simulate attacks (run malicious commands)
 3. Record the CloudTrail events
-4. Label them myself since I know what I did
+4. Label them ourselves since we know what we did
 
-**What I tried:**
+**What we tried:**
 
 1. **AWS Free Tier Testing**
    - Created test IAM users
@@ -135,13 +135,13 @@ Since real data doesn't exist, what if I just... make some?
 
 **The problem with synthetic data:**
 
-Even though I generated these events myself, they're not realistic because:
+Even though we generated these events ourselves, they're not realistic because:
 - Real attackers don't follow scripts
 - Real environments have way more noise
 - Real attacks are mixed with legitimate activity
-- I can't generate millions of events without spending hundreds of dollars
+- We can't generate millions of events without spending hundreds of dollars
 
-More importantly: If I generate synthetic attacks and then train an ML model on them, the model just learns MY attack patterns. It won't generalize to real attackers who do things differently.
+More importantly: If we generate synthetic attacks and then train an ML model on them, the model just learns OUR attack patterns. It won't generalize to real attackers who do things differently.
 
 **Verdict:** Synthetic data alone won't work for a serious capstone project.
 
@@ -149,7 +149,7 @@ More importantly: If I generate synthetic attacks and then train an ML model on 
 
 ### Week 3: The flaws.cloud Discovery
 
-Then I found **flaws.cloud** - this dataset from a security researcher named Scott Piper.
+Then we found **flaws.cloud** - this dataset from a security researcher named Scott Piper.
 
 **What it is:**
 - CloudTrail logs from an intentionally vulnerable AWS environment
@@ -158,7 +158,7 @@ Then I found **flaws.cloud** - this dataset from a security researcher named Sco
 - 1.9 MILLION events over 3+ years
 - NO LABELS (this is the catch)
 
-**Why this is better than what I had:**
+**Why this is better than what we had:**
 
 ✅ Real attack attempts (thousands of people trying to hack it)
 ✅ Massive scale (1.9M events vs 493)
@@ -169,11 +169,11 @@ Then I found **flaws.cloud** - this dataset from a security researcher named Sco
 ❌ IPs are randomized (privacy)
 ❌ Some context missing (anonymized for CTF players)
 
-**Decision:** Use this dataset, but I'll need a different approach since there are no labels.
+**Decision:** Use this dataset, but we'll need a different approach since there are no labels.
 
 ---
 
-## All the Things I Tried That Failed
+## All the Things We Tried That Failed
 
 ### Attempt #1: Zero-Shot BART Classification
 
@@ -181,7 +181,7 @@ Then I found **flaws.cloud** - this dataset from a security researcher named Sco
 
 BART is a language model that can do "zero-shot classification" - you give it text and category names, and it guesses which category fits best. No training needed!
 
-**My approach:**
+**Our approach:**
 
 ```python
 from transformers import pipeline
@@ -209,7 +209,7 @@ result = classifier(event_text, candidate_labels=categories)
 # Returns: {"label": "reconnaissance", "score": 0.256}
 ```
 
-I processed 100,000 events this way.
+We processed 100,000 events this way.
 
 **The results:**
 
@@ -249,7 +249,7 @@ To classify correctly, you need:
 
 BART only sees the single event text. Not enough information.
 
-**What I learned:**
+**What we learned:**
 
 The behavioral shift finding was actually interesting though! When analyzing aggregated patterns:
 
@@ -263,7 +263,7 @@ That 48% surge suggests the "backup" account got compromised and immediately sta
 
 So even though individual event confidence was low, the aggregate patterns were meaningful.
 
-**Verdict:** Individual event classification doesn't work well enough for publication. But maybe I can use a different approach...
+**Verdict:** Individual event classification doesn't work well enough for publication. But maybe we can use a different approach...
 
 ---
 
@@ -271,16 +271,16 @@ So even though individual event confidence was low, the aggregate patterns were 
 
 **The idea:** Maybe BART's confidence is low because it doesn't understand AWS?
 
-What if I fine-tune it on CloudTrail-specific data?
+What if we fine-tune it on CloudTrail-specific data?
 
-**The problem:** To fine-tune, I need labeled training data.
+**The problem:** To fine-tune, we need labeled training data.
 
-Which brings me back to the original problem - I don't have labeled data!
+Which brings us back to the original problem - we don't have labeled data!
 
-**I tried:**
+**We tried:**
 1. Using the small 493-event dataset → Too small, synthetic labels
 2. Creating synthetic labels with rules → Circular logic (model learns the rules)
-3. Manual labeling → Started labeling events myself, got through 200 before giving up (too slow, takes ~30 seconds per event)
+3. Manual labeling → Started labeling events ourselves, got through 200 before giving up (too slow, takes ~30 seconds per event)
 
 **Verdict:** Can't fine-tune without good training data. Back to square one.
 
@@ -304,10 +304,10 @@ def label_event(event_name):
 
 **The problem:** Same issue as the professor's dataset!
 
-If I use rules to create labels, then train an ML model on those labels, the model just learns my rules. It doesn't learn to detect actual attacks.
+If we use rules to create labels, then train an ML model on those labels, the model just learns our rules. It doesn't learn to detect actual attacks.
 
 Example:
-- My rule says: `ListBuckets = reconnaissance`
+- Our rule says: `ListBuckets = reconnaissance`
 - But sometimes `ListBuckets` is just a normal admin checking their buckets!
 - The rule is too simplistic
 
@@ -319,12 +319,12 @@ Example:
 
 **The idea:** Build a graph of user-to-resource interactions
 
-Maybe I don't need to classify individual events. Instead, build a graph:
+Maybe we don't need to classify individual events. Instead, build a graph:
 - Nodes = users and AWS resources
 - Edges = actions (e.g., User A accessed Resource B)
 - Look for suspicious patterns in the graph
 
-I wrote code for this: (`graph_feasibility_check.py`)
+We wrote code for this: (`graph_feasibility_check.py`)
 
 ```python
 # Check if dataset has enough graph signals
@@ -341,7 +341,7 @@ for event in assume_role_events:
 # Result: Level5 → Level6 → backup
 ```
 
-**What I found:**
+**What we found:**
 
 The graph approach showed the attack progression:
 
@@ -356,7 +356,7 @@ backup (900K events, mass attack)
 **The problem:**
 
 Interesting for visualization, but:
-- How do I validate this is correct? (No ground truth)
+- How do we validate this is correct? (No ground truth)
 - Graph patterns alone don't explain WHAT happened
 - Doesn't produce useful output for analysts
 
@@ -366,7 +366,7 @@ Interesting for visualization, but:
 
 ## What Actually Worked
 
-After all those failures, here's what I ended up doing:
+After all those failures, here's what we ended up doing:
 
 ### The Final Approach: Statistical Analysis + LLM Narratives
 
@@ -375,7 +375,7 @@ After all those failures, here's what I ended up doing:
 2. Explaining patterns
 3. Writing narratives
 
-So instead of trying to classify events, I:
+So instead of trying to classify events, we:
 1. Use **pandas** to find statistical patterns (this works great!)
 2. Use **LLM** to explain what those patterns mean (this is what LLMs are good at!)
 
@@ -383,7 +383,7 @@ So instead of trying to classify events, I:
 
 ### Step 1: Statistical Pre-Processing (`llm_forensic_analysis.py`)
 
-**What I did:** Used Python/pandas to aggregate and analyze the data
+**What we did:** Used Python/pandas to aggregate and analyze the data
 
 ```python
 import pandas as pd
@@ -450,7 +450,7 @@ This is clearly an automated bot that discovered the leaked credentials and trie
 
 ### Step 2: Extended Behavioral Analysis (`llm_forensic_extended.py`)
 
-**What I did:** Deeper analysis of attack patterns
+**What we did:** Deeper analysis of attack patterns
 
 **Attack Phase Detection:**
 
@@ -504,11 +504,11 @@ Results:
 
 ### Step 3: LLM Narrative Generation
 
-**What I did:** Feed the statistical findings to GPT-4 and ask it to explain what happened
+**What we did:** Feed the statistical findings to GPT-4 and ask it to explain what happened
 
-Instead of asking the LLM to classify events, I ask it to interpret the patterns I found!
+Instead of asking the LLM to classify events, we ask it to interpret the patterns we found!
 
-**Example prompt I used:**
+**Example prompt we used:**
 
 ```
 You are a cloud security forensic analyst.
@@ -576,7 +576,7 @@ This is way more useful than "event X has 25% confidence of being reconnaissance
 
 ### Step 4: Interactive Dashboards
 
-I built 3 different Streamlit dashboards so people can explore the data:
+We built 3 different Streamlit dashboards so people can explore the data:
 
 **1. Bulletproof Dashboard (`bulletproof_dashboard.py`)**
 - Super simple, guaranteed to work
@@ -600,7 +600,7 @@ I built 3 different Streamlit dashboards so people can explore the data:
 
 Final piece: Generate professional forensic reports automatically
 
-**What I did:**
+**What we did:**
 
 ```python
 from anthropic import Anthropic
@@ -648,7 +648,7 @@ report = response.content[0].text
 
 ## Final Results
 
-### What I Built
+### What We Built
 
 **Code files:**
 - `llm_forensic_analysis.py` - Statistical analysis engine (400 lines)
@@ -721,12 +721,12 @@ Stage 5: Mass Exploitation (August 2019)
 
 **Time Reduction:**
 - Manual investigation: 40+ hours
-- This system: 2-4 hours
+- Our system: 2-4 hours
 - **Speedup: 20x faster**
 
 **Cost Efficiency:**
 - Manual forensic analyst: $150/hour × 40 hours = $6,000
-- This system: $0.42 per LLM report
+- Our system: $0.42 per LLM report
 - **Savings: 99.99%**
 
 **Scale:**
@@ -873,10 +873,10 @@ python analysis/llm_forensic_interactive.py
 
 ## Conclusion
 
-This project taught me that research is messy. I tried a bunch of things that didn't work before finding what did.
+This project taught us that research is messy. We tried a bunch of things that didn't work before finding what did.
 
-The final approach - combining statistical analysis with LLM narratives - works way better than I expected. It's not perfect, but it's practical and actually helps real analysts.
+The final approach - combining statistical analysis with LLM narratives - works way better than we expected. It's not perfect, but it's practical and actually helps real analysts.
 
 **Key takeaway:** Don't try to force LLMs to do everything. Use them for what they're good at (understanding and explaining) and use traditional tools for what they're good at (counting and aggregating).
 
-**20x faster investigations with 99.99% cost savings?** I'll take it.
+**20x faster investigations with 99.99% cost savings?** We'll take it.
